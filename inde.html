@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skyline Athletics | Demo 2</title>
+<style>
+:root {
+  --blue: #315efb;
+  --mint: #baf5df;
+  --ink: #202b48;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--ink);
+  background: white;
+}
+.container { width: 90%; max-width: 1150px; margin: auto; }
+header {
+  position: sticky; top: 0; z-index: 10;
+  background: #ffffffed; border-bottom: 1px solid #eee;
+}
+nav {
+  min-height: 72px; display: flex;
+  justify-content: space-between; align-items: center;
+}
+.logo { font-weight: 900; font-size: 20px; }
+.logo span { color: var(--blue); }
+.links { display: flex; gap: 25px; }
+a { text-decoration: none; color: inherit; }
+.links a:hover { color: var(--blue); }
+.menu { display: none; padding: 9px; background: white; border: 1px solid #ddd; border-radius: 8px; }
+.hero {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 40px; align-items: center; padding: 65px 0;
+}
+.tag {
+  display: inline-block; background: #e8edff;
+  color: var(--blue); padding: 10px 15px;
+  border-radius: 30px; font-size: 12px; font-weight: bold;
+}
+h1 { font-size: clamp(48px, 7vw, 86px); line-height: .95; letter-spacing: -4px; margin: 24px 0; }
+h1 em { color: var(--blue); font-style: normal; }
+p { line-height: 1.8; color: #687185; }
+.btn {
+  display: inline-block; background: var(--blue); color: white;
+  padding: 15px 20px; border-radius: 10px;
+  font-weight: bold; margin-top: 15px;
+  transition: .25s;
+}
+.btn:hover { transform: translateY(-4px); box-shadow: 0 12px 25px #315efb40; }
+.hero img {
+  width: 100%; height: 430px; object-fit: cover;
+  border-radius: 28px; background: var(--mint);
+  animation: float 5s ease-in-out infinite;
+}
+.banner {
+  background: #e8edff; color: var(--blue);
+  padding: 20px; text-align: center;
+  font-weight: 900; letter-spacing: 2px;
+}
+section { padding: 70px 0; }
+.heading { text-align: center; margin-bottom: 35px; }
+.heading h2 { font-size: clamp(32px, 5vw, 50px); margin: 12px 0; }
+.cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.card {
+  border: 1px solid #eee; padding: 25px;
+  border-radius: 20px; transition: .3s;
+}
+.card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px #202b4815; }
+.icon { background: #e8edff; width: 55px; height: 55px; display: grid; place-items: center; border-radius: 15px; font-size: 27px; }
+.card h3 { font-size: 21px; }
+.price { color: var(--blue); font-weight: bold; }
+.cta {
+  background: var(--ink); color: white; padding: 40px;
+  border-radius: 25px; text-align: center;
+}
+.cta p { color: #d7deef; }
+.cta .btn { background: var(--mint); color: var(--ink); }
+footer { padding: 25px 0; color: #687185; font-size: 13px; }
+.reveal { opacity: 0; transform: translateY(20px); transition: .7s; }
+.reveal.show { opacity: 1; transform: none; }
+@keyframes float { 50% { transform: translateY(-8px); } }
+@media(max-width:700px) {
+  .menu { display: block; }
+  .links {
+    display: none; position: absolute; top: 72px; left: 0; right: 0;
+    padding: 22px; background: white; flex-direction: column;
+  }
+  .links.open { display: flex; }
+  .hero { grid-template-columns: 1fr; padding: 40px 0; }
+  h1 { letter-spacing: -2px; }
+  .hero img { height: 300px; }
+  .cards { grid-template-columns: 1fr; }
+  section { padding: 48px 0; }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <a class="logo" href="#">SKYLINE<span> ✦</span></a>
+    <button class="menu" aria-label="Open menu">☰</button>
+    <div class="links">
+      <a href="#programs">Programs</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="container hero">
+  <div class="reveal">
+    <span class="tag">YOUR FITNESS ERA STARTS HERE</span>
+    <h1>YOUR ENERGY.<br>YOUR <em>ERA.</em></h1>
+    <p>Train your way. Discover supportive coaching, energetic classes and a welcoming space to build healthy habits at your own pace.</p>
+    <a class="btn" href="#programs">Explore programs ↗</a>
+  </div>
+  <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85" alt="Modern gym interior">
+</section>
+
+<div class="banner">✦ MOVE MORE &nbsp; ✦ FEEL GOOD &nbsp; ✦ FIND YOUR STRENGTH</div>
+
+<section class="container" id="programs">
+  <div class="heading reveal">
+    <span class="tag">FIND YOUR FLOW</span>
+    <h2>Training that fits you.</h2>
+    <p>Choose your next favourite way to move.</p>
+  </div>
+  <div class="cards">
+    <article class="card reveal"><div class="icon">🏋️</div><h3>Strength Studio</h3><p>Build strength with helpful coaching and a plan that grows with you.</p><div class="price">Plans from ₹899</div></article>
+    <article class="card reveal"><div class="icon">⚡</div><h3>Pulse Classes</h3><p>Group workouts with upbeat music, friendly energy and variety.</p><div class="price">20+ weekly sessions</div></article>
+    <article class="card reveal"><div class="icon">🧘</div><h3>Stretch & Restore</h3><p>Explore mobility, balance and recovery in a calm environment.</p><div class="price">All levels welcome</div></article>
+  </div>
+</section>
+
+<section class="container" id="about">
+  <div class="cta reveal">
+    <span class="tag">MEET YOUR NEW ROUTINE</span>
+    <h2>Progress looks different on everyone.</h2>
+    <p>Our demo gym is built around a simple idea: movement should feel welcoming, achievable and enjoyable.</p>
+    <a class="btn" href="#contact">Start exploring ↗</a>
+  </div>
+</section>
+
+<section class="container" id="contact">
+  <div class="heading reveal">
+    <h2>Come say hello.</h2>
+    <p>21 Skyline Road, Your City · Sample number: +91 90000 00000</p>
+    <a class="btn" href="mailto:hello@example.com">Contact us ↗</a>
+  </div>
+</section>
+</main>
+
+<footer class="container">© 2026 Skyline Athletics · Demo website</footer>
+
+<script>
+const menu = document.querySelector(".menu");
+const links = document.querySelector(".links");
+menu.addEventListener("click", () => links.classList.toggle("open"));
+links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => links.classList.remove("open")));
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
